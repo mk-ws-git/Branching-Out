@@ -1,11 +1,13 @@
 import json
 
 def load_users():
+    """Load and return user data from users.json."""
     with open("users.json", "r", encoding="utf-8") as file:
         return json.load(file)
 
 
 def filter_users_by_name(name):
+    """Print users whose name matches the provided name input."""
     users = load_users()
     filtered_users = [user for user in users if user["name"].lower() == name.lower()]
 
@@ -14,6 +16,7 @@ def filter_users_by_name(name):
 
 
 def filter_by_age(min_age, max_age):
+    """Print users whose age matches the provided age range input."""
     users = load_users()
     filtered_users = [user for user in users if min_age <= user["age"] <= max_age]
 
@@ -22,6 +25,7 @@ def filter_by_age(min_age, max_age):
 
 
 def filter_by_email(email):
+    """Print users whose email matches the provided email input."""
     users = load_users()
     filtered_users = [user for user in users if user["email"].lower() == email.lower()]
 
