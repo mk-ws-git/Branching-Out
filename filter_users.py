@@ -1,5 +1,9 @@
 import json
 
+def load_users():
+    with open("users.json", "r", encoding="utf-8") as file:
+        return json.load(file)
+
 
 def filter_users_by_name(name):
     with open("users.json", "r",  encoding="utf-8") as file:
