@@ -1,8 +1,12 @@
 import json
+import os
 
 def load_users():
     """Load and return user data from users.json."""
-    with open("users.json", "r", encoding="utf-8") as file:
+    base_dir = os.path.dirname(os.path.abspath(__file__))
+    users_file = os.path.join(base_dir, "users.json")
+
+    with open(users_file, "r", encoding="utf-8") as file:
         return json.load(file)
 
 
